@@ -810,7 +810,7 @@ export default {
                     this.pagination_count = result.data.count
 
                     this.facets = result.data.facets
-                    this.recipes = this.removeDuplicates(result.data.results, (recipe) => recipe.id)
+                    this.recipes = [...this.removeDuplicates(result.data.results, (recipe) => recipe.id)]
                     if (!this.searchFiltered()) {
                         // if meal plans are being shown (and only when search is unfiltered) - filter out any meal plan recipes from the recipe list
                         let mealPlans = []
