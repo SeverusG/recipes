@@ -325,5 +325,6 @@
     "recipe_filter": "Recipe Filter",
     "book_filter_help": "Include recipes from recipe filter instead of assigning each recipe",
     "review_shopping": "Review shopping entries before saving",
-    "view_recipe": "View Recipe"
+    "view_recipe": "View Recipe",
+    "filter": "Filter"
 }
