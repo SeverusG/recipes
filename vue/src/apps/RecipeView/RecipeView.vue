@@ -167,6 +167,7 @@ import StepComponent from "@/components/StepComponent"
 import KeywordsComponent from "@/components/KeywordsComponent"
 import NutritionComponent from "@/components/NutritionComponent"
 import RecipeSwitcher from "@/components/Buttons/RecipeSwitcher"
+import CustomInputSpinButton from "@/components/CustomInputSpinButton"
 
 Vue.prototype.moment = moment
 
@@ -188,6 +189,7 @@ export default {
         LoadingSpinner,
         AddRecipeToBook,
         RecipeSwitcher,
+        CustomInputSpinButton,
     },
     computed: {
         ingredient_factor: function () {
