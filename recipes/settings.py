@@ -265,6 +265,8 @@ if os.getenv('DATABASE_URL'):
     schema = settings['schema']
     if schema.startswith('postgres'):
         engine = 'django.db.backends.postgresql'
+    elif schema.startswith('mysql'):
+        engine = 'django.db.backends.mysql'
     elif schema == 'sqlite':
         engine = 'django.db.backends.sqlite3'
     else:
@@ -287,11 +289,11 @@ else:
         'default': {
             'ENGINE': os.getenv('DB_ENGINE') if os.getenv('DB_ENGINE') else 'django.db.backends.sqlite3',
             'OPTIONS': ast.literal_eval(os.getenv('DB_OPTIONS')) if os.getenv('DB_OPTIONS') else {},
-            'HOST': os.getenv('POSTGRES_HOST'),
-            'PORT': os.getenv('POSTGRES_PORT'),
-            'USER': os.getenv('POSTGRES_USER'),
-            'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
-            'NAME': os.getenv('POSTGRES_DB') if os.getenv('POSTGRES_DB') else 'db.sqlite3',
+            'HOST': os.getenv('DB_HOST'),
+            'PORT': os.getenv('DB_PORT'),
+            'USER': os.getenv('DB_USER'),
+            'PASSWORD': os.getenv('DB_PASSWORD'),
+            'NAME': os.getenv('DB_NAME') if os.getenv('DB_NAME') else 'db.sqlite3',
             'CONN_MAX_AGE': 60,
         }
     }
